@@ -170,7 +170,7 @@ pipeline {
    post {
     always {
      // using warning next gen plugin
-     recordIssues aggregatingResults: true, tools: [javaDoc(), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
+     recordIssues aggregatingResults: true, tools: [javaDoc(javadocDir: './target/site/apidocs'), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
     }
    }
   }

@@ -11,6 +11,15 @@ pipeline {
   NEXUS_REPOSITORY = "maven-nexus-repo"
   // Jenkins credential id to authenticate to Nexus OSS
   NEXUS_CREDENTIAL_ID = "nexus-jenkins-user"
+// https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
+ NEXUS_COMMON_CREDS = credentials('nexus-jenkins-user')
+	 /*
+	 this actually sets the following three environment variables:
+BITBUCKET_COMMON_CREDS - contains a username and a password separated by a colon in the format username:password.
+BITBUCKET_COMMON_CREDS_USR - an additional variable containing the username component only.
+BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password component only.
+	 */
+	 
   /* 
     Windows: set the ip address of docker host. In my case 192.168.99.100.
     to obtains this address : $ docker-machine ip
@@ -239,11 +248,11 @@ pipeline {
      pom = readMavenPom file: "pom.xml"
      repoPath = "${pom.groupId}".replace(".", "/") + "/${pom.artifactId}"
      version = pom.version
-     artifactId = pom.artifactId
+     artifactId = pom.artifactId	    
      withEnv(["ANSIBLE_HOST_KEY_CHECKING=False", "APP_NAME=${artifactId}", "repoPath=${repoPath}", "version=${version}"]) {
       sh '''
       
-        curl --silent --user admin:admin   "http://$NEXUS_URL/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/maven-metadata.xml" > tmp &&
+        curl --silent --user $NEXUS_COMMON_CREDS_USR:$NEXUS_COMMON_CREDS_PSW  "http://$NEXUS_URL/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/maven-metadata.xml" > tmp &&
         egrep '<value>+([0-9\\-\\.]*)' tmp > tmp2 &&
         tail -n 1 tmp2 > tmp3 &&
         tr -d "</value>[:space:]" < tmp3 > tmp4 &&

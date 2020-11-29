@@ -175,6 +175,7 @@ pipeline {
    }
   }
   stage('Deploy Artifact To Nexus') {
+	  // https://medium.com/appfleet/publishing-artifacts-to-sonatype-nexus-using-jenkins-pipelines-db8c1412dc7
    when {
     anyOf { branch 'master'; branch 'develop' }
    }

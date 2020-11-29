@@ -243,7 +243,7 @@ pipeline {
      withEnv(["ANSIBLE_HOST_KEY_CHECKING=False", "APP_NAME=${artifactId}", "repoPath=${repoPath}", "version=${version}"]) {
       sh '''
       
-        curl --silent "http://$NEXUS_URL/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/maven-metadata.xml" > tmp &&
+        curl --silent --user admin:admin   "http://$NEXUS_URL/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/maven-metadata.xml" > tmp &&
         egrep '<value>+([0-9\\-\\.]*)' tmp > tmp2 &&
         tail -n 1 tmp2 > tmp3 &&
         tr -d "</value>[:space:]" < tmp3 > tmp4 &&

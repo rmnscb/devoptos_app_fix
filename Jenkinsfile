@@ -249,7 +249,7 @@ pipeline {
         tr -d "</value>[:space:]" < tmp3 > tmp4 &&
         REPO_VERSION=$(cat tmp4) &&
 
-        export APP_SRC_URL="http://${NEXUS_URL}/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/${APP_NAME}-${REPO_VERSION}.war" &&
+        export APP_SRC_URL="http://${NEXUS_URL}/repository/${NEXUS_REPOSITORY}/${repoPath}/${version}/${APP_NAME}-${REPO_VERSION}.war" &&
         ansible-playbook -v -i ./ansible_provisioning/hosts --extra-vars "host=staging" ./ansible_provisioning/playbook.yml 
 
        '''
@@ -283,7 +283,7 @@ pipeline {
         tr -d "</value>[:space:]" < tmp3 > tmp4 &&
         REPO_VERSION=$(cat tmp4) &&
 
-        export APP_SRC_URL="http://${NEXUS_URL}/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/${APP_NAME}-${REPO_VERSION}.war" &&
+        export APP_SRC_URL="http://${NEXUS_URL}/repository/${NEXUS_REPOSITORY}/${repoPath}/${version}/${APP_NAME}-${REPO_VERSION}.war" &&
         ansible-playbook -v -i ./ansible_provisioning/hosts --extra-vars "host=production" ./ansible_provisioning/playbook.yml 
 
        '''

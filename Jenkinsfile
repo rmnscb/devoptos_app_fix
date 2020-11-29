@@ -250,7 +250,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
      version = pom.version
      artifactId = pom.artifactId	    
      withEnv(["ANSIBLE_HOST_KEY_CHECKING=False", "APP_NAME=${artifactId}", "repoPath=${repoPath}", "version=${version}"]) {
-      sh '''
+      sh '''      
       
         curl --silent --user $NEXUS_COMMON_CREDS_USR:$NEXUS_COMMON_CREDS_PSW  "http://$NEXUS_URL/repository/$NEXUS_REPOSITORY/${repoPath}/${version}/maven-metadata.xml" > tmp &&
         egrep '<value>+([0-9\\-\\.]*)' tmp > tmp2 &&

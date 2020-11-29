@@ -6,7 +6,7 @@ pipeline {
   // This can be http or https
   NEXUS_PROTOCOL = "http"
   // Where your Nexus is running. In my case:
-  NEXUS_URL = "localhost:8081"
+  NEXUS_URL = "172.25.48.1:8081"
   // Repository where we will upload the artifact
   NEXUS_REPOSITORY = "maven-nexus-repo"
   // Jenkins credential id to authenticate to Nexus OSS
@@ -170,7 +170,7 @@ pipeline {
    post {
     always {
      // using warning next gen plugin
-     recordIssues aggregatingResults: true, tools: [mavenConsole(), java(), javaDoc(pattern: '**/target/site/apidocs'), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
+     recordIssues aggregatingResults: true, tools: [mavenConsole(), java(), javaDoc(), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
     }
    }
   }

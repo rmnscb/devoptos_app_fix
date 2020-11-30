@@ -24,23 +24,17 @@ WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
 
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_error'))
 
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_error_1'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/div_head                              error_958ec5'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_error_1_2'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_error_1_2_3'))
+WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
 
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_Expand Operations'))
 
+WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
+
+WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide_1'))
+
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
 
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
+WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_Expand Operations'))
 
 WebUI.closeBrowser()
 

@@ -311,7 +311,7 @@ stage('QA testing with katalon') {
 		      sh 'pwd'
 	     		sh 'ls'
                 }
-	    cd ${WORKSPACE}/.. && pwd
+	    
                 sh 'katalonc -noSplash -runMode=console -projectPath="katalon/My First Web UI Project (1).prj" -retry=0 -testSuitePath="Test Suites/New Test Suite" -executionProfile="default" -browserType="Chrome" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
             }
     } // aki

@@ -300,7 +300,7 @@ stage('QA testing with katalon') {
      }
      steps {
 
-	     cd "/var/jenkins_home/workspace/devoptos_app_fix_main"
+	     sh 'cd "/var/jenkins_home/workspace/devoptos_app_fix_main"'
 	      sh 'pwd'
 	     sh 'ls'
 	    

@@ -308,11 +308,11 @@ stage('QA testing with katalon') {
       }
      }
      steps {
-dir('katalon') { // this app is also a repository of the app	
+// dir('katalon') { // this app is also a repository of the app	
 	     echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
 
 	     
-	      sh 'cd katalon && pwd'
+	     
 	     sh 'ls'     
 	     
 	    
@@ -320,7 +320,7 @@ dir('katalon') { // this app is also a repository of the app
             }
     } // aki
    }
-  }
+ // }
 }
 	 
 	 

@@ -286,7 +286,7 @@ stage('QA testing') {
       // }
       steps {
         sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""  
-	      echo "${env.JOB_NAME}/${PULL_REQUEST_NUMBER}/${env.BUILD_NUMBER}"
+	      
     
 	      
       }
@@ -299,18 +299,10 @@ stage('QA testing with katalon') {
       }
      }
      steps {
+
+	     cd "/var/jenkins_home/workspace/devoptos_app_fix_main"
 	      sh 'pwd'
 	     sh 'ls'
-	     echo "Workspace dir is ${pwd()}"
-	     dir("${env.WORKSPACE}"){ 
-		     sh 'pwd'
-	     echo "work space :${env.WORKSPACE}"
-	     }
-	     dir("${params.workspace}" ) {   
-		    
-		      sh 'pwd'
-	     		sh 'ls'
-                }
 	    
                 sh 'katalonc -noSplash -runMode=console -projectPath="katalon/My First Web UI Project (1).prj" -retry=0 -testSuitePath="Test Suites/New Test Suite" -executionProfile="default" -browserType="Chrome" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
             }

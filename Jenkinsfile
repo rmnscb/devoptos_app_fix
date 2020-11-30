@@ -295,7 +295,7 @@ stage('QA testing') {
 	      
       }
     }
-dir('/var/jenkins_home/workspace/devoptos_app_fix_main') { // this app is also a repository of the app	   
+   
 stage('QA testing with katalon') {
      agent {
       docker {
@@ -304,7 +304,7 @@ stage('QA testing with katalon') {
       }
      }
      steps {
-
+dir('/var/jenkins_home/workspace/devoptos_app_fix_main') { // this app is also a repository of the app	
 	     echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
 
 	     sh 'cd /var/jenkins_home/workspace/devoptos_app_fix_main'

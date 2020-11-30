@@ -39,6 +39,7 @@ disableConcurrentBuilds()
    steps {
     checkout scm
 	   echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
+	   sh 'cd ${env.WORKSPACE} && ls'
    }
   }
   stage('Build') {

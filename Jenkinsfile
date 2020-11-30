@@ -14,6 +14,7 @@ pipeline {
   NEXUS_CREDENTIAL_ID = "nexus-jenkins-user"
 // https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
   NEXUS_COMMON_CREDS = credentials('nexus-jenkins-user')
+
 	 /*
 	 this actually sets the following three environment variables:
 BITBUCKET_COMMON_CREDS - contains a username and a password separated by a colon in the format username:password.
@@ -37,6 +38,7 @@ disableConcurrentBuilds()
   stage('SCM') {
    steps {
     checkout scm
+	   echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
    }
   }
   stage('Build') {
@@ -285,9 +287,7 @@ stage('QA testing') {
       //   expression { mapBranch[params.DEPLOY_TO] == "production" }
       // }
       steps {
-        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""  
-	      
-    
+        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""     
 	      
       }
     }
@@ -299,6 +299,8 @@ stage('QA testing with katalon') {
       }
      }
      steps {
+
+	     echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
 
 	     sh 'cd "/var/jenkins_home/workspace/devoptos_app_fix_main"'
 	      sh 'pwd'

@@ -1,5 +1,5 @@
 pipeline {
-agent none
+ agent { label 'master' } 
 	
  environment {
   // This can be nexus3 or nexus2

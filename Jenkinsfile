@@ -34,7 +34,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
  }
  options {
   skipDefaultCheckout()
-disableConcurrentBuilds() 
+
  }
  stages {
   stage('SCM') {

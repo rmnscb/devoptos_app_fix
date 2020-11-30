@@ -15,7 +15,7 @@ pipeline {
 // https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
   NEXUS_COMMON_CREDS = credentials('nexus-jenkins-user')
 
-PROJEC_PATH = ${env.WORKSPACE}
+PROJEC_PATH = env.WORKSPACE
 
 	 /*
 	 this actually sets the following three environment variables:

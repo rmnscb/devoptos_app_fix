@@ -358,5 +358,10 @@ dir('/var/jenkins_home/workspace/devoptos_app_fix_main') { // this app is also a
     }
    }
   }
+post {
+  always {
+    cleanWs()
+  }
+}
  }
 }

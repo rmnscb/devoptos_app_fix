@@ -281,7 +281,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
       }
      }
      steps {
-        'newman_report_extra:1.0 run newman/test.json --reporters="json,cli,junitxray,confluence,htmlextra" --reporter-json-export '/reports/newman-results.json'  --reporter-confluence-export '/reports/template-default.wiki' --reporter-junitxray-export '/reports/xray_result.xml''      
+        newman "newman_report_extra:1.0 run newman/test.json --reporters="json,cli,junitxray,confluence,htmlextra" --reporter-json-export '/reports/newman-results.json'  --reporter-confluence-export '/reports/template-default.wiki' --reporter-junitxray-export '/reports/xray_result.xml'"      
      }
     }
     stage('QA testing with katalon') {
@@ -292,7 +292,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
       }
      }
      steps {
-      echo "TESTES DO KATALON"	  
+      echo 'TESTES DO KATALON'	  
 	  
 
      }

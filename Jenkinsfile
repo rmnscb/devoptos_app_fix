@@ -283,7 +283,7 @@ stage('QA testing') {
       //   expression { mapBranch[params.DEPLOY_TO] == "production" }
       // }
       steps {
-        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""  
+        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""   
     
 	      
       }

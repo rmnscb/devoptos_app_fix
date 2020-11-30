@@ -271,23 +271,20 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
 	 
 stage('QA testing') {
    parallel {
-    stage('QA testing with postman') {
-     agent {
-      docker {
-       image 'postman/newman'
-      // args '-v `pwd`/target/newman:/reports'
-       // to use the same node and workdir defined on top-level pipeline for all docker agents
-       reuseNode false
-      }
-     }
-     steps {	 
-	//   " newman_report_extra:1.0 run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 --reporters='json,cli,junitxray,confluence,htmlextra' --reporter-json-export '/reports/newman-results.json'  --reporter-confluence-export '/reports/template-default.wiki' --reporter-junitxray-export '/reports/xray_result.xml'"      
-      // sh " newman_report_extra:1.0 run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 " 
-	     
 	   
-	  sh  " newman run newman/test.json "
-	     sh "newman run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 "      
-     }
+ stage("QA testing with postman") {
+      agent {
+        docker {
+          image 'postman/newman'
+          args '--entrypoint='
+        }
+      }
+      // when {
+      //   expression { mapBranch[params.DEPLOY_TO] == "production" }
+      // }
+      steps {
+        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""        
+      }
     }
     stage('QA testing with katalon') {
      agent {

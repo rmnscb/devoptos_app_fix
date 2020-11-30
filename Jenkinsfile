@@ -306,7 +306,7 @@ stage('QA testing with katalon') {
 
 	     echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
 
-	     sh 'cd ${PROJEC_PATH}'
+	     sh 'cd /var/jenkins_home/workspace/devoptos_app_fix_main'
 	      sh 'pwd'
 	     sh 'ls'
 	    

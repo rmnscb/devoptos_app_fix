@@ -15,7 +15,7 @@ pipeline {
 // https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
   NEXUS_COMMON_CREDS = credentials('nexus-jenkins-user')
 
-PROJEC_PATH = "CAMINHO"
+
 
 	 /*
 	 this actually sets the following three environment variables:
@@ -42,7 +42,7 @@ disableConcurrentBuilds()
     checkout scm
 	   echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
 	   sh 'cd ${env.WORKSPACE} && ls'
-	   PROJEC_PATH = ${env.WORKSPACE}
+	   
    }
   }
   stage('Build') {

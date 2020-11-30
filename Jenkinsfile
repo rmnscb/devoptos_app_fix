@@ -262,6 +262,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
         ansible-playbook -v -i ./ansible_provisioning/hosts --extra-vars "host=staging" ./ansible_provisioning/playbook.yml 
 
        '''
+echo "FIM DO Deploy to Staging Servers"
      }
     }
    }

@@ -1,3 +1,54 @@
 {
-  "brokenTestObjects" : [ ]
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Page_Swagger UI/a_error",
+      "brokenLocator": "//li[@id\u003d\u0027basic-error-controller_errorUsingDELETE\u0027]/div/h3/span[2]/a",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//a[contains(text(),\u0027/error\u0027)]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Page_Swagger UI/a_error_link.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Page_Swagger UI/a_error_1",
+      "brokenLocator": "//li[@id\u003d\u0027basic-error-controller_errorUsingGET\u0027]/div/h3/span[2]/a",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "(//a[contains(text(),\u0027/error\u0027)])[2]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Page_Swagger UI/a_error_1_link.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Page_Swagger UI/div_head                              error_958ec5",
+      "brokenLocator": "//li[@id\u003d\u0027basic-error-controller_errorUsingHEAD\u0027]/div",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Response Headers\u0027])[2]/following::div[2]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Page_Swagger UI/div_head                              error_958ec5_neighbor.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Page_Swagger UI/a_error_1_2",
+      "brokenLocator": "//li[@id\u003d\u0027basic-error-controller_errorUsingHEAD\u0027]/div/h3/span[2]/a",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "(//a[contains(text(),\u0027/error\u0027)])[3]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Page_Swagger UI/a_error_1_2_link.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Page_Swagger UI/a_error_1_2_3",
+      "brokenLocator": "//li[@id\u003d\u0027basic-error-controller_errorUsingOPTIONS\u0027]/div/ul/li/a",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "(//a[contains(text(),\u0027error\u0027)])[9]",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/Self-healing/Object Repository/Page_Swagger UI/a_error_1_2_3_link.png"
+    }
+  ]
 }

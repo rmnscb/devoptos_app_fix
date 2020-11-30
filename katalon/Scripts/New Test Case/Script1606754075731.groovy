@@ -18,7 +18,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:8089/demo/swagger-ui.html#/')
+WebUI.navigateToUrl('http://172.25.48.1:8089/demo/swagger-ui.html#/')
 
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
 

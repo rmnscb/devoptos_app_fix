@@ -308,9 +308,14 @@ stage('QA testing with katalon') {
       }
      }
      steps {
+	     sh 'pwd'
+	     sh 'ls'
  dir('katalon/teste_katalon') { // this app is also a repository of the app	
 	     echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"     
 	       
+	 	sh 'pwd'
+	     	sh 'ls'
+	 
 	      sh 'katalonc -noSplash -runMode=console -projectPath="/var/jenkins_home/workspace/devoptos_app_fix_main/katalon/teste_katalon/teste_katalon.prj" -retry=0 -testSuitePath="Test Suites/New_Test_Suite" -executionProfile="default" -browserType="Chrome" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
 		   
                 

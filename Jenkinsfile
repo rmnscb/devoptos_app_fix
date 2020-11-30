@@ -275,7 +275,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
      agent {
       docker {
        image 'rmnscb/newman_jira_reports'
-       args '-v `pwd`/target/newman:/reports'
+      // args '-v `pwd`/target/newman:/reports'
        // to use the same node and workdir defined on top-level pipeline for all docker agents
        reuseNode false
       }

@@ -15,6 +15,7 @@ pipeline {
 // https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials
   NEXUS_COMMON_CREDS = credentials('nexus-jenkins-user')
 
+	//  customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}/${BUILD_NUMBER}"
 
 
 	 /*
@@ -40,7 +41,8 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
   stage('SCM') {
    steps {
     checkout scm
-	   echo "Running ${env.GIT_LOCAL_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
+	   echo "Running ${env.GIT_LOCAL_BRANCH} ola ${env.SVN_BRANCH} on ${env.GIT_CHECKOUT_DIR} in ${env.JENKINS_HOME} on ${env.WORKSPACE} in ${env.WORKSPACE_TMP}"
+	   
 	  
 	   
    }

@@ -285,7 +285,7 @@ stage('QA testing') {
       // sh " newman_report_extra:1.0 run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 " 
 	     
 	   
-	  sh  " run newman/test.json "
+	  sh  " newman run newman/test.json "
 	     sh "newman run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 "      
      }
     }

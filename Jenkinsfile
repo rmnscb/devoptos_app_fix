@@ -287,6 +287,7 @@ stage('QA testing') {
         docker {
           image 'postman/newman'
           args '--entrypoint='
+	  reuseNode true
         }
       }
       // when {
@@ -303,6 +304,7 @@ stage('QA testing with katalon') {
       docker {
 		image 'katalonstudio/katalon'
             args "-u root"
+	      reuseNode true
       }
      }
      steps {

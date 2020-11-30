@@ -283,20 +283,16 @@ stage('QA testing') {
       //   expression { mapBranch[params.DEPLOY_TO] == "production" }
       // }
       steps {
-        sh "newman run \"https://www.getpostman.com/collections/e6bb79c28c2121963c80\""  
-	      
-	       sh "newman run \"https://www.getpostman.com/collections/9724120ca1d1ad257935\""  
-	       sh "newman run \"https://www.getpostman.com/collections/a9ea1adcf3b16e2381e8\""  
-	       sh "newman run \"https://www.getpostman.com/collections/bd11e8ed3c63149e0019\""  
-	       sh "newman run \"https://www.getpostman.com/collections/dec2ec44dbf31e2e41b1\""       
+        sh "newman run \"https://www.getpostman.com/collections/9e8b55b10f6705f5a066\""  
+    
 	      
       }
     }
     stage('QA testing with katalon') {
      agent {
       docker {
-       image 'katalonstudio/katalon'
-       reuseNode false
+		image 'katalonstudio/katalon'
+            args "-u root"
       }
      }
      steps {

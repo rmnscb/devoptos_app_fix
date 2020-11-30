@@ -262,11 +262,48 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
         ansible-playbook -v -i ./ansible_provisioning/hosts --extra-vars "host=staging" ./ansible_provisioning/playbook.yml 
 
        '''
-echo "FIM DO Deploy to Staging Servers"
+
      }
     }
    }
   }
+	 // INICION DOS  TESTS
+	 
+	   stage('QA testing') {
+   parallel {
+    stage('QA testing with postman') {
+     agent {
+      docker {
+       image 'rmnscb/newman_jira_reports'
+       args '-v target/newman:/reports'
+       // to use the same node and workdir defined on top-level pipeline for all docker agents
+       reuseNode false
+      }
+     }
+     steps {
+        'newman_report_extra:1.0 run newman/test.json --reporters="json,cli,junitxray,confluence,htmlextra" --reporter-json-export '/reports/newman-results.json'  --reporter-confluence-export '/reports/template-default.wiki' --reporter-junitxray-export '/reports/xray_result.xml''      
+     }
+    }
+    stage('QA testing with katalon') {
+     agent {
+      docker {
+       image 'katalonstudio/katalon'
+       reuseNode false
+      }
+     }
+     steps {
+      echo "TESTES DO KATALON"	  
+	  
+
+     }
+    }
+   }
+  }
+	 
+	 
+	 
+	 
+	 // FIM DOS TESTES	 
    stage('Deploy to Production Servers') {
    when {
     anyOf { branch 'master'  ; branch 'main'}

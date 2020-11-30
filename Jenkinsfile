@@ -284,7 +284,7 @@ stage('QA testing') {
 	//   " newman_report_extra:1.0 run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 --reporters='json,cli,junitxray,confluence,htmlextra' --reporter-json-export '/reports/newman-results.json'  --reporter-confluence-export '/reports/template-default.wiki' --reporter-junitxray-export '/reports/xray_result.xml'"      
       // sh " newman_report_extra:1.0 run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 " 
 	     
-	   sh   " run newman/test.json "
+	   sh   " newman run newman/test.json "
 	     sh "newman run https://www.getpostman.com/collections/9e8b55b10f6705f5a066 "      
      }
     }

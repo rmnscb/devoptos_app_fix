@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description></description>
-   <name>My First Web UI Project (1)</name>
+   <name>My First Web UI Project</name>
    <tag></tag>
    <UUID>e29cf16d-af35-4802-8331-8c1e8a9d7111</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\Users\rmns\Katalon Studio\My First Web UI Project (1)\My First Web UI Project (1).prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

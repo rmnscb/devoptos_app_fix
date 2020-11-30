@@ -42,13 +42,5 @@ WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
 
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
 
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide_1'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_Expand Operations'))
-
 WebUI.closeBrowser()
 

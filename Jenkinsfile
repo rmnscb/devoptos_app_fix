@@ -274,7 +274,7 @@ stage('QA testing') {
     stage('QA testing with postman') {
      agent {
       docker {
-       image 'rmnscb/newman_jira_reports'
+       image 'postman/newman'
       // args '-v `pwd`/target/newman:/reports'
        // to use the same node and workdir defined on top-level pipeline for all docker agents
        reuseNode false

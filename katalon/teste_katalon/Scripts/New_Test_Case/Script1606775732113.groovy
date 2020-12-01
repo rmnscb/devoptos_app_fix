@@ -16,25 +16,14 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+WebUI.openBrowser('http://172.25.48.1:8089/demo/swagger-ui.html#/')
+
+WebUI.maximizeWindow()
 
 WebUI.navigateToUrl('http://172.25.48.1:8089/demo/swagger-ui.html#/')
 
 WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
 
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_error'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_Expand Operations'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_ShowHide_1'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_List Operations'))
-
-WebUI.click(findTestObject('Object Repository/Page_Swagger UI/a_Expand Operations'))
 
 WebUI.closeBrowser()
 

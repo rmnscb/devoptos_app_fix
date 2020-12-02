@@ -87,7 +87,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
   }
   stage('Unit Tests') {
    when {
-    anyOf { branch 'master'; branch 'develop' ; branch 'main' }
+    anyOf { branch 'master'; branch 'develop' }
    }
    agent {
     docker {
@@ -107,7 +107,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
   }
   stage('Integration Tests') {
    when {
-    anyOf { branch 'master'; branch 'develop' ; branch 'main' }
+    anyOf { branch 'master'; branch 'develop' }
    }
    agent {
     docker {
@@ -197,7 +197,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
   stage('Deploy Artifact To Nexus') {
 	  // https://medium.com/appfleet/publishing-artifacts-to-sonatype-nexus-using-jenkins-pipelines-db8c1412dc7
    when {
-    anyOf { branch 'master'; branch 'develop' ; branch 'main' }
+    anyOf { branch 'master'; branch 'develop' }
    }
    steps {
     script {
@@ -245,7 +245,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
   }
   stage('Deploy to Staging Servers') {
    when {
-    anyOf { branch 'master'; branch 'develop'  ; branch 'main'}
+    anyOf { branch 'master'; branch 'develop'  }
    }
    agent {
     docker {
@@ -281,6 +281,9 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
 	 // INICION DOS  TESTS
 	 
 stage('QA testing') {
+when {
+    anyOf { branch 'master'; branch 'develop'  }
+   }
    parallel {
 	   
  stage("QA testing with postman") {
@@ -330,7 +333,7 @@ stage('QA testing with katalon') {
 	 // FIM DOS TESTES	 
    stage('Deploy to Production Servers') {
    when {
-    anyOf { branch 'master'  ; branch 'main'}
+    anyOf { branch 'master'}
    }
    agent {
     docker {

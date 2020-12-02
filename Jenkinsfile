@@ -31,7 +31,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
     to obtains this address : $ docker-machine ip
     Linux: set localhost to SONARQUBE_URL
   */
-  SONARQUBE_URL = "http://172.25.48.1"
+  SONARQUBE_URL = "http://172.17.0.1"
   SONARQUBE_PORT = "9000"
  }
  options {

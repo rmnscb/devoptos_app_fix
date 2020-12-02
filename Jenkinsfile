@@ -191,9 +191,10 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
    post {
     always {
      // using warning next gen plugin
-     recordIssues aggregatingResults: true, tools: [mavenConsole(), java(), javaDoc(), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
+     // recordIssues aggregatingResults: true, tools: [mavenConsole(), java(), javaDoc(), checkStyle(pattern: '**/target/checkstyle-result.xml'), findBugs(pattern: '**/target/findbugsXml.xml', useRankAsPriority: true), pmdParser(pattern: '**/target/pmd.xml')]
 	    
-	    
+	 def checkstyle = recordIssues tool: checkStyle(pattern: '**/target/checkstyle-result.xml') 
+	    echo 'teste: checkstyle.getId() '
 	    // https://github.com/jenkinsci/warnings-ng-plugin/blob/master/doc/Documentation.md#token-macro-support
 	    
 	    

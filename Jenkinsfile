@@ -312,25 +312,19 @@ stage('QA testing with katalon') {
       }
      }
      steps {
-	     sh 'pwd'
-	     sh 'ls'
- dir('katalon/teste_katalon') { // this app is also a repository of the app	
 
-	 echo 'caminho : ${env.WORKSPACE}'
-	 echo "caminho : ${env.WORKSPACE}"
-	 
-	 sh 'ls'
+ // dir('katalon/teste_katalon') { // this app is also a repository of the app
 	 
 	 echo "katalonc -noSplash -runMode=console -projectPath='${env.WORKSPACE}/katalon/teste_katalon/teste_katalon.prj' -retry=0 -testSuitePath='Test Suites/New_Test_Suite' -executionProfile='default' -browserType='Chrome (headless)' -apiKey='2fb75599-123b-465b-95b4-753e1841f00c' --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true"	   
               
 	 
 	    //  sh 'katalonc -noSplash -runMode=console -projectPath="/var/jenkins_home/workspace/devoptos_app_fix_main/katalon/teste_katalon/teste_katalon.prj" -retry=0 -testSuitePath="Test Suites/New_Test_Suite" -executionProfile="default" -browserType="Chrome" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
-	       sh 'katalonc -noSplash -runMode=console -projectPath="$env.WORKSPACE/katalon/teste_katalon/teste_katalon.prj" -retry=0 -testSuitePath="Test Suites/New_Test_Suite" -executionProfile="default" -browserType="Chrome (headless)" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'	   
+	     sh "katalonc -noSplash -runMode=console -projectPath='${env.WORKSPACE}/katalon/teste_katalon/teste_katalon.prj' -retry=0 -testSuitePath='Test Suites/New_Test_Suite' -executionProfile='default' -browserType='Chrome (headless)' -apiKey='2fb75599-123b-465b-95b4-753e1841f00c' --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true"	   
                 
               //  sh 'katalonc -noSplash -runMode=console -projectPath="katalon/My First Web UI Project (1).prj" -retry=0 -testSuitePath="Test Suites/New Test Suite" -executionProfile="default" -browserType="Chrome" -apiKey="2fb75599-123b-465b-95b4-753e1841f00c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true'
             }
     } // aki
-   }
+ //  }
   }
 }
 	 

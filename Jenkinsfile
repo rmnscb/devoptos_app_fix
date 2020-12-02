@@ -184,7 +184,7 @@ BITBUCKET_COMMON_CREDS_PSW - an additional variable containing the password comp
      }
      steps {
       sh " mvn sonar:sonar -Dsonar.host.url=$SONARQUBE_URL:$SONARQUBE_PORT"
-	     echo "numero de bug: ${ANALYSIS_ISSUES_COUNT} "
+	     
      }
     }
    }
